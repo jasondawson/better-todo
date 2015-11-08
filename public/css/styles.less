@@ -1,0 +1,45 @@
+@nice-blue: #5B83AD;
+@light-blue: @nice-blue + #111;
+
+header {
+	background-color: @light-blue;
+	height: 50px;
+	width: 100%;
+}
+
+.clearfix {
+  display: block;
+  zoom: 1;
+
+  &:after {
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+.test {
+  color: red;
+}
+
+.card {
+  height: 50px;
+  min-height: 50px;
+  width: 100px;
+  min-width: 100px;
+  background-color: @nice-blue;
+  border-radius: 5px;
+}
+
+.list {
+  height: auto;
+  min-height: 70px;
+  width: 120px;
+  min-width: 120px;
+  background-color: @nice-blue - #111;
+  border-radius: 5px;
+}
+

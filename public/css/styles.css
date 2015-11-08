@@ -1,0 +1,36 @@
+header {
+  background-color: #6c94be;
+  height: 50px;
+  width: 100%;
+}
+.clearfix {
+  display: block;
+  zoom: 1;
+}
+.clearfix:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.test {
+  color: red;
+}
+.card {
+  height: 50px;
+  min-height: 50px;
+  width: 100px;
+  min-width: 100px;
+  background-color: #5B83AD;
+  border-radius: 5px;
+}
+.list {
+  height: auto;
+  min-height: 70px;
+  width: 120px;
+  min-width: 120px;
+  background-color: #4a729c;
+  border-radius: 5px;
+}
