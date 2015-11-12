@@ -6,10 +6,10 @@ var User = new Schema({
 		type: String,
 		required: true
 	},
-	lists: {
+	lists: [{
 		type: Schema.ObjectId,
 		ref: 'List'
-	}
+	}]
 })
 
 module.exports = Mongoose.model('User', User);

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/styles.css">
 	<meta charset="UTF-8">
 	<title>Better Todo</title>
@@ -12,6 +13,8 @@
 	</header>
 	
 	<ui-view></ui-view>
+	
+	<script src="bower_components/jquery/dist/jquery.js"></script>
 	<script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 	<script src="app.js"></script>
@@ -21,6 +24,8 @@
 	<script src="components/list/pageDirective.js"></script>
 	<script src="components//list/listDirective.js"></script>
 	<script src="components/list/cardDirective.js"></script>
+	<script src="components/list/listService.js"></script>
+	<script src="components/directives/draggable.js"></script>
 	
 </body>
 </html>

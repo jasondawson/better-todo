@@ -1,6 +1,11 @@
 @nice-blue: #5B83AD;
 @light-blue: @nice-blue + #111;
 
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
 header {
 	background-color: @light-blue;
 	height: 50px;
@@ -22,24 +27,60 @@ header {
 }
 
 .test {
-  color: red;
+  color: white;
 }
 
 .card {
+  display: inline-block;
+  z-index: 2;
+  margin: 5px;
+  position: relative;
+  padding: 10px;
   height: 50px;
   min-height: 50px;
   width: 100px;
   min-width: 100px;
   background-color: @nice-blue;
   border-radius: 5px;
+  &.grab {
+    cursor: -webkit-grab;
+  }
+  &.grabbing {
+    cursor: -webkit-grabbing;
+    position: relative;
+    bottom: 80px;
+  }
 }
 
 .list {
-  height: auto;
+  margin: 5px;
+  z-index: 2;
+  display: inline-block;
+  padding: 10px;
   min-height: 70px;
-  width: 120px;
-  min-width: 120px;
+  max-height: 80%;
+  width: 200px;
+  min-width: 200px;
   background-color: @nice-blue - #111;
   border-radius: 5px;
+  .cardContainer {
+    overflow: hidden;
+  }
 }
 
+
+
+.outline {
+  outline: 1px solid red;
+}
+
+.page {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  margin-top: 10px;
+  align-items: flex-start;
+  .list {
+    align-self: flex-start;
+  }
+}

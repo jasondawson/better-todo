@@ -7,8 +7,10 @@ var List = new Schema({
 		required: true
 	},
 	cards: [{
-		type: Schema.ObjectId,
-		ref: 'Card'
+		title: {
+			type: String,
+			required: true
+		}
 	}]
 })
 

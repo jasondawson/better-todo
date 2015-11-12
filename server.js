@@ -20,25 +20,37 @@ app.use(session({
 	resave: false
 }));
 
+var isAuthenticated = function (req, res, next) {
+	if (req.session.user) {
+		next();
+	} else {
+		return res.status(403).send('Please login first')
+	}
+}
 
 
 /**************** API Controller *************/
 var UserCtrl = require('./api/controllers/UserCtrl.js');
+var ListCtrl = require('./api/controllers/ListCtrl.js')
 
 
 /**************** API *************/
 
 app.post('/auth/login', UserCtrl.login);
 
-app.get('auth/logout', UserCtrl.logout);
+app.get('/auth/logout', UserCtrl.logout);
 
-app.get('api/getLists', function (req, res) {
-	if (req.session.user) {
-		UserCtrl.getLists();
-	} else {
-		res.status(403).send('Please login first')
-	}
-})
+app.get('/api/getLists', isAuthenticated, ListCtrl.getLists)
+
+app.post('/api/addList', isAuthenticated, ListCtrl.addList);
+
+app.post('/api/deleteList', isAuthenticated, ListCtrl.deleteList);
+
+app.post('/api/addCard', isAuthenticated, ListCtrl.addCard);
+
+app.post('/api/deleteCard', isAuthenticated, ListCtrl.deleteCard);
+
+app.post('/api/moveCard', isAuthenticated, ListCtrl.moveCard);
 
 /************ END API *************/
 

@@ -12,7 +12,7 @@ module.exports = {
 			.exec(function (err, user) {
 				if (err) {
 					console.log(err);
-					res.status(500).json(err);
+					return res.status(500).json(err);
 				}
 				else if (!user) {
 					var newUser = new User({
@@ -21,16 +21,16 @@ module.exports = {
 					newUser.save(function (err, savedUser) {
 						if (err) {
 							console.log(err);
-							res.status(500).json(err);
+							return res.status(500).json(err);
 						}
-						res.session.user = savedUser;
+						req.session.user = savedUser;
 						console.log('user', req.session.savedUser);
-						res.status(200).json(savedUser);
+						return res.status(200).json(savedUser);
 					})
 				} else {
 					req.session.user = user;
 					console.log('user', req.session.user);
-					res.status(200).json(user);
+					return res.status(200).json(user);
 				}
 			})
 	},
@@ -39,7 +39,7 @@ module.exports = {
 			delete req.session.user;
 		}
 		console.log('user', req.session.user);
-		res.status(200).send('logged out')
+		return res.status(200).send('logged out')
 	}
 
 

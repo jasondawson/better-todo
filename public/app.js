@@ -14,9 +14,8 @@ app.config(function ($urlRouterProvider, $stateProvider) {
 			controller: 'MainCtrl',
 			templateUrl: 'components/list/mainView.html',
 			resolve: {
-				lists: function () {
-					var lists = [{ id: 1, title: 'One', cards: [{title: 'something'}, {title: 'something else'}]}, {id: 2, title: 'Two'}];
-					return lists;
+				lists: function (listService) {
+					return listService.getLists();
 				}
 			}
 		})

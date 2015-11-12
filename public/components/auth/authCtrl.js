@@ -1,9 +1,15 @@
 var app = angular.module('todo');
 
 app.controller('AuthCtrl', function ($scope, $state, authService) {
-	
+
 	$scope.test = 'auth'
 	
+	$scope.handleEnterOnInput = function (event) {
+		if (event.keyCode === 13) {
+			$scope.login();
+		}
+	}
+
 	$scope.login = function () {
 		authService.login($scope.username)
 			.then(function (response) {
@@ -13,7 +19,7 @@ app.controller('AuthCtrl', function ($scope, $state, authService) {
 				console.log(err);
 			})
 	}
-	
+
 	$scope.logout = function () {
 		authService.logout()
 			.then(function (response) {

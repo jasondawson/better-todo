@@ -1,3 +1,8 @@
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
 header {
   background-color: #6c94be;
   height: 50px;
@@ -16,9 +21,14 @@ header {
   visibility: hidden;
 }
 .test {
-  color: red;
+  color: white;
 }
 .card {
+  display: inline-block;
+  z-index: 2;
+  margin: 5px;
+  position: relative;
+  padding: 10px;
   height: 50px;
   min-height: 50px;
   width: 100px;
@@ -26,11 +36,39 @@ header {
   background-color: #5B83AD;
   border-radius: 5px;
 }
+.card.grab {
+  cursor: -webkit-grab;
+}
+.card.grabbing {
+  cursor: -webkit-grabbing;
+  position: relative;
+  bottom: 80px;
+}
 .list {
-  height: auto;
+  margin: 5px;
+  z-index: 2;
+  display: inline-block;
+  padding: 10px;
   min-height: 70px;
-  width: 120px;
-  min-width: 120px;
+  max-height: 80%;
+  width: 200px;
+  min-width: 200px;
   background-color: #4a729c;
   border-radius: 5px;
+}
+.list .cardContainer {
+  overflow: hidden;
+}
+.outline {
+  outline: 1px solid red;
+}
+.page {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  margin-top: 10px;
+  align-items: flex-start;
+}
+.page .list {
+  align-self: flex-start;
 }
