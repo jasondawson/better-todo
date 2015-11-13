@@ -57,8 +57,11 @@ app.directive('page', function () {
 			}
 
 			$scope.handleExitList = function (index) {
-				if ($scope.lists[index].cards[$scope.lists[index].cards.length - 1]._id === undefined) {
-					$scope.lists[index].cards.pop();
+				var cards = $scope.lists[index].cards;
+				if (cards.length) {
+					if ($scope.lists[index].cards[$scope.lists[index].cards.length - 1]._id === undefined) {
+						$scope.lists[index].cards.pop();
+					}
 				}
 			}
 

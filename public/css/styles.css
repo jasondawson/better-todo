@@ -23,27 +23,6 @@ header {
 .test {
   color: white;
 }
-.card {
-  display: inline-block;
-  z-index: 2;
-  margin: 5px;
-  position: relative;
-  padding: 10px;
-  height: 50px;
-  min-height: 50px;
-  width: 100px;
-  min-width: 100px;
-  background-color: #5B83AD;
-  border-radius: 5px;
-}
-.card.grab {
-  cursor: -webkit-grab;
-}
-.card.grabbing {
-  cursor: -webkit-grabbing;
-  position: relative;
-  bottom: 80px;
-}
 .list {
   margin: 5px;
   z-index: 2;
@@ -58,6 +37,45 @@ header {
 }
 .list .cardContainer {
   overflow: hidden;
+}
+.list:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  background: #8eb6e0;
+  margin-bottom: 5px;
+}
+.cardContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.card {
+  z-index: 2;
+  margin: 5px;
+  padding: 10px;
+  height: 50px;
+  min-height: 50px;
+  width: 100px;
+  min-width: 100px;
+  background-color: #5B83AD;
+  border-radius: 5px;
+}
+.card.grab {
+  cursor: -webkit-grab;
+}
+.card.grabbing {
+  cursor: -webkit-grabbing;
 }
 .outline {
   outline: 1px solid red;
