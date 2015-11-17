@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,300italic,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/styles.css">
 	<meta charset="UTF-8">
 	<title>Better Todo</title>
@@ -9,7 +10,7 @@
 <body ng-app="todo">
 	
 	<header>
-		Todo
+		<h1>Todo</h1>
 	</header>
 	
 	<ui-view></ui-view>
@@ -26,6 +27,13 @@
 	<script src="components/list/cardDirective.js"></script>
 	<script src="components/list/listService.js"></script>
 	<script src="components/directives/draggable.js"></script>
+  
+  <script src="jquery.lettering-0.6.1.min.js"></script>  
+  <script>
+  $(document).ready(function() {
+    $("h1").lettering();
+  });
+</script>
 	
 </body>
 </html>

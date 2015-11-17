@@ -1,15 +1,21 @@
 @nice-blue: #5B83AD;
 @light-blue: @nice-blue + #111;
+@font1: 'Open Sans', sans-serif;
 
 body, html {
   height: 100%;
   width: 100%;
+  font-family: @font1;
+  color: white;
+  margin: 0;
 }
 
 header {
-	background-color: @light-blue;
-	height: 50px;
+	background-color: black;
+	height: 11%;
 	width: 100%;
+  padding: 0 2%;
+  margin: 0;
 }
 
 .clearfix {
@@ -41,6 +47,7 @@ header {
   min-width: 200px;
   background-color: @nice-blue - #111;
   border-radius: 5px;
+  
   .cardContainer {
     overflow: hidden;
   }
@@ -102,3 +109,40 @@ header {
     align-self: flex-start;
   }
 }
+
+//==================================
+
+h1 {
+  margin: 0;
+  padding: 0;
+  width: 10%;
+  height: 5%;
+  font-size: 3em;
+  font-weight: 700;
+  letter-spacing: -0.18em;
+  font-family: @font1;
+
+  span:nth-child(1) {
+    color: rgba(242,38,19, 0.85);
+  }
+  span:nth-child(2) {
+//    color: rgba(233, 30, 99, 0.85);
+    color: rgba(219,10,91, 0.85);
+  }
+  span:nth-child(3) {
+    color: rgba(102,51,153, 0.85);
+  }
+  span:nth-child(4) {
+    color: rgba(154,18,179, 0.85);
+  }
+  span:nth-child(5) {
+    color: rgba(156, 39, 96, 0.85);
+  }
+  span:nth-child(6) {
+    color: rgba(233, 30, 99, 0.85);
+  }
+  span:nth-child(7) {
+    color: rgba(229, 28, 35, 0.85);
+  }
+}
+
