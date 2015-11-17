@@ -1,3 +1,5 @@
+// VARIABLES, MIXINS, ETC
+
 @nice-blue: #5B83AD;
 @light-blue: @nice-blue + #111;
 @ivory: #FFFFDA;
@@ -17,28 +19,20 @@
     margin-bottom: 2%;
     color: @btnborder;
     background-color: white;
-
-//    &:focus {
-//      background-color: white;
-//    }
   }
 }
 
 .input-sm {
   input {
     width: 14.5em;
-    height: 1.5em;
-    border: 2px solid  #81009A;   
+    height: 2em;
+    border: 2px solid rgb(102,51,153);   
     padding-left: 1%;
     padding-bottom: 0.2em;
     display: block;
     margin-bottom: 2%;
     color: @btnborder;
-    background-color: white;
-
-//    &:focus {
-//      background-color: ;
-//    }
+    background-color: #ffe0ff;
   }
 }
 
@@ -49,6 +43,9 @@
   }
 }
 
+
+
+// GLOBAL STYLES
 
 body, html {
   height: 100%;
@@ -100,7 +97,7 @@ header {
   width: 200px;
   min-width: 200px;
   background-color: rgb(102,51,153);
-//  border-radius: 5px;
+  border: 3px solid #59268c;
   
   .cardContainer {
     overflow: hidden;
@@ -118,29 +115,44 @@ header {
 .list-header {
   display: flex;
   justify-content: space-between;
-  border: 1px solid black;
-  border-radius: 5px;
   padding: 5px;
-  background: @nice-blue + #333;
-  margin-bottom: 5px;
+  background: #CC47B0;
+  margin: 0 2px;
+  border: 3px solid #bf3aa3;
+
+  span {
+    i {
+      color: white;
+    }
+  }
 }
 
 .cardContainer {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-color: #ff7ae3;
+  border: 3px solid #f26dd6;
+  margin: 5px 0;
+  
+  span {
+    i {
+      color: white;
+    }
+  }
 }
 
 .card {
   z-index: 2;
-  margin: 5px;
-  padding: 10px;
+  margin: 5px 0;
+  padding: 5px;
   height: 50px;
   min-height: 50px;
-  width: 100px;
-  min-width: 100px;
-  background-color: @nice-blue;
-  border-radius: 5px;
+  width: 158px;
+  min-width: 158px;
+//  background-color: #ff7ae3;
+//  border: 3px solid #f26dd6;
+  
   &.grab {
     cursor: -webkit-grab;
   }
