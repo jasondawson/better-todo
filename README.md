@@ -1,5 +1,16 @@
 # better-todo
 
+```
+npm install
+```
+
+cd to /public
+
+```
+bower install
+```
+
+
 Have a running mongo instance on the default port (27017)
 
 ```
