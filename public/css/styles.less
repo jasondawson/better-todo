@@ -1,15 +1,78 @@
-@nice-blue: #5B83AD;
-@light-blue: @nice-blue + #111;
+// VARIABLES, MIXINS, ETC
+
+@ltivory: #FFFFF4;
+@btn: rgb(154,18,179);
+@btnborder: #81009A;
+@font1: 'Open Sans', sans-serif;
+
+.input-lg {
+  input {
+    width: 20em;
+    height: 1.5em;
+    border: 2px solid #59268c;  
+    padding-left: 1%;
+    padding-bottom: 0.2em;
+    display: block;
+    margin-bottom: 2.5%;
+    color: @btnborder;
+    background-color: white;
+  }
+}
+
+.input-sm {
+  input {
+    width: 14.4em;
+    height: 2em;
+    color: #bf3aa3;
+    background-color: #fffdbf;
+    box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.4);
+    border: 2px solid #F5B961;    
+    padding-left: 5px;
+    padding-bottom: 0.2em;
+    display: block;
+    margin-bottom: 2%;
+    
+  }
+}
+
+.input-placeholder {
+  input[type="text"]::-webkit-input-placeholder {
+    color: @btnborder;
+    font-family: @font1; 
+  }
+}
+
+
+
+// GLOBAL STYLES
+//* {
+//  outline: 1px solid red;
+//}
 
 body, html {
   height: 100%;
   width: 100%;
+  font-family: @font1;
+  background-color: white;
+  margin: 0;
+  position: relative;
 }
 
-header {
-	background-color: @light-blue;
-	height: 50px;
+body {
+  background-image: url(../images/abstract-bg.jpg);
+  background-size: cover;
+}
+
+header {	
+  background-color: white;
+	height: 55px;
 	width: 100%;
+  padding: 0 0 30px 20px;
+  margin: 0 0 30px 0;
+  border-bottom: 2px solid #59268c;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .clearfix {
@@ -31,19 +94,22 @@ header {
 }
 
 .list {
-  margin: 5px;
+  margin: 0 5px;
   z-index: 2;
   display: inline-block;
   padding: 10px;
-  min-height: 70px;
+  min-height: 85px;
   max-height: 80%;
   width: 200px;
   min-width: 200px;
-  background-color: @nice-blue - #111;
-  border-radius: 5px;
+  background-color: rgb(102,51,153);
+  border: 3px solid #59268c;
+  box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.4);
+  
   .cardContainer {
     overflow: hidden;
   }
+  
     &:after {
     content: " ";
     display: block;
@@ -57,29 +123,53 @@ header {
 .list-header {
   display: flex;
   justify-content: space-between;
-  border: 1px solid black;
-  border-radius: 5px;
   padding: 5px;
-  background: @nice-blue + #333;
-  margin-bottom: 5px;
+  background: #CC47B0;
+  margin: 0 0 0 2px;
+  border: 3px solid #bf3aa3;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  width: 182px;
+  box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.4);
+
+  span {
+    i {
+      color: white;
+    }
+  }
 }
 
 .cardContainer {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-color: #ffc7ff;
+  border: 3px solid #ffadff;
+  margin: 5px 0;
+  box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.4);
+  
+  p {
+    color: #400d73;
+  }
+  
+  span {
+    i {
+      color: #bf3aa3;
+      padding-right: 5px;
+    }
+  }
 }
 
 .card {
   z-index: 2;
-  margin: 5px;
-  padding: 10px;
+  margin: 5px 0;
+  padding: 5px;
   height: 50px;
   min-height: 50px;
-  width: 100px;
-  min-width: 100px;
-  background-color: @nice-blue;
-  border-radius: 5px;
+  width: 158px;
+  min-width: 158px;
+  
   &.grab {
     cursor: -webkit-grab;
   }
@@ -87,10 +177,10 @@ header {
     cursor: -webkit-grabbing;
   }
 }
-
-.outline {
-  outline: 1px solid red;
-}
+//
+//.outline {
+//  outline: 1px solid red;
+//}
 
 .page {
   display: flex;
@@ -98,7 +188,74 @@ header {
   justify-content: flex-end;
   margin-top: 10px;
   align-items: flex-start;
+  
   .list {
     align-self: flex-start;
   }
 }
+
+//==================================
+
+h1 {
+  width: 10%;
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: -0.2em;
+  font-family: @font1;
+  margin: 0;
+
+  span:nth-child(1) {
+    color: rgba(102,51,153, 0.82);
+  }
+  span:nth-child(2) {    
+    color: rgba(204, 71, 176, 0.82);
+  }
+  span:nth-child(3) {
+    color: rgba(219,10,91, 0.82);
+  }
+  span:nth-child(4) {    
+    color: rgba(103,207,220,0.82);
+  }
+}
+
+.auth {  
+  width: 30%;
+  background-color: white;
+  box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.4);
+  border: 3px solid #59268c;
+  padding-top: 4%;
+  padding-left: 9%;
+  padding-bottom: 4%;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  .input-lg;
+  .input-placeholder;
+
+  .login {
+    width: 5em;
+    height: 2.1em;
+    background-color: rgb(102,51,153);
+    color: @ltivory;
+    font-size: 0.8em;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    border: 3px solid #59268c;
+    display: block;
+  }
+}
+
+.page {
+  margin: 30px;  
+  position: absolute;
+  top: 80px;
+  .input-sm; 
+  .input-placeholder;
+}
+
+
+
+
+
+
+//====
