@@ -53,6 +53,7 @@ body, html {
   font-family: @font1;
   background-color: white;
   margin: 0;
+  position: relative;
 }
 
 body {
@@ -64,9 +65,12 @@ header {
   background-color: white;
 	height: 12.5%;
 	width: 100%;
-  padding: 0 2%;
+  padding: 2%;
   margin: 0 0 30px 0;
   border-bottom: 2px solid #59268c;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .clearfix {
@@ -136,7 +140,6 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-//  background-color: #ff7ae3;
   background-color: #ffc7ff;
   border: 3px solid #ffadff;
   margin: 5px 0;
@@ -164,6 +167,7 @@ header {
   
   &.grab {
     cursor: -webkit-grab;
+    background-color: blue;
   }
   &.grabbing {
     cursor: -webkit-grabbing;
@@ -180,6 +184,7 @@ header {
   justify-content: flex-end;
   margin-top: 10px;
   align-items: flex-start;
+  
   .list {
     align-self: flex-start;
   }
@@ -188,11 +193,9 @@ header {
 //==================================
 
 h1 {
-  margin: 0;
-  padding-bottom: 20px;
   width: 10%;
   height: 5%;
-  font-size: 3.5em;
+  font-size: 3em;
   font-weight: 700;
   letter-spacing: -0.18em;
   font-family: @font1;
@@ -212,7 +215,8 @@ h1 {
 }
 
 .auth {
-  margin: 5% 35%;  
+  margin: 5% 0 0 35%;  
+  width: 33%;
   .input-lg;
   .input-placeholder;
 
@@ -228,8 +232,6 @@ h1 {
     display: block;
   }
 }
-
-
 
 .page {
   margin: 5% 5%;  
