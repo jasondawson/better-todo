@@ -17,10 +17,10 @@ app.directive('myDraggable', function ($document) {
                 $document.on('mouseup', mouseup);
                 var clone = elem.clone(true)
                     .attr('id', 'clone')
-                    .css({ border: '1px solid black', borderRadius: '5px', position: 'fixed', zIndex: '10', opacity: '0.8', transform: 'rotate(5deg)', top: e.pageY, left: e.pageX })
+                    .css({ border: '1px solid rgb(204,71,176)', position: 'fixed', zIndex: '10', opacity: '0.8', transform: 'rotate(5deg)', top: e.pageY, left: e.pageX })
                 $('body').append(clone);
                 $('body').css({cursor: '-webkit-grabbing'})
-                elem.css({backgroundColor: 'lightgrey', border: '1px dashed black'})
+                elem.css({backgroundColor: '#ffa0ff', border: '1px dashed rgb(204,71,176)'})
             });
 
             function mousemove(e) {
